@@ -10,9 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let studentsData = [];
-
-  // 7.1 Додаємо обробники подій
-  getStudentsBtn.addEventListener('click', async () => {
+getStudentsBtn.addEventListener('click', async () => {
     try {
       console.log('Button clicked: Attempting to fetch students...');
       await getStudents();
@@ -35,9 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert(`Помилка додавання студента: ${error.message}`);
     }
   });
-
-  // 1. Функція для отримання всіх студентів (імітація HTTP GET /students)
-  async function getStudents() {
+async function getStudents() {
     try {
       console.log('Fetching students...');
       const storedData = localStorage.getItem('students');
@@ -81,9 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       throw error;
     }
   }
-
-  // 2. Функція для відображення студентів у таблиці
-  async function renderStudents(students) {
+async function renderStudents(students) {
     try {
       console.log('Rendering students:', students);
       studentsTableBody.innerHTML = '';
@@ -120,9 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
       throw error;
     }
   }
-
-  // 3. Функція для додавання нового студента (імітація HTTP POST /students)
-  async function addStudent(e) {
+async function addStudent(e) {
     try {
       const name = document.querySelector('#name').value.trim();
       const age = parseInt(document.querySelector('#age').value);
@@ -157,8 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 4. Функція для оновлення студента (імітація HTTP PATCH /students/:id)
-  async function updateStudent(id) {
+async function updateStudent(id) {
     try {
       console.log('Updating student with id:', id);
       const student = studentsData.find(s => s.id === id);
@@ -192,8 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 5. Функція для видалення студента (імітація HTTP DELETE /students/:id)
-  async function deleteStudent(id) {
+async function deleteStudent(id) {
     try {
       console.log('Deleting student with id:', id);
       studentsData = studentsData.filter(s => s.id !== id);

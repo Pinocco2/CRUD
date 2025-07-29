@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Students</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no-cache">
+  <title>CRUD Students</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>Список студентів</h1>
     <button id="get-students-btn">Отримати студентів</button>
-
     <table id="students-table">
       <thead>
         <tr>
@@ -24,11 +26,8 @@
           <th>Дії</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Динамічно заповнено -->
-      </tbody>
+      <tbody></tbody>
     </table>
-
     <h2>Додати нового студента</h2>
     <form id="add-student-form">
       <label>Ім'я: <input type="text" id="name" required></label>
@@ -40,3 +39,6 @@
       <button type="submit">Додати студента</button>
     </form>
   </div>
+  <script src="script.js"></script>
+</body>
+</html>
